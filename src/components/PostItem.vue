@@ -1,0 +1,36 @@
+<script>
+import MyButton from "@/components/UI/MyButton.vue";
+
+export default {
+  name: "PostItem",
+  components: {MyButton},
+  props: {
+    post : {
+      type: Object,
+      required: true
+    }
+  }
+}
+</script>
+
+<template>
+  <div class="post">
+    <div><strong>Название: </strong>{{ post.title }}</div>
+    <div><strong>Описание: </strong>{{ post.body }}</div>
+
+    <div class="post__btns">
+      <my-button @click="$emit('remove', post)">Удалить</my-button>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.post {
+  padding: 15px;
+  border: 2px solid teal;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+</style>
