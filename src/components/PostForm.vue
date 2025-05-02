@@ -34,6 +34,7 @@ export default {
 
     <my-input
         v-model="post.title"
+        v-focus
         class="my-input"
         type="text"
         placeholder="Название"
